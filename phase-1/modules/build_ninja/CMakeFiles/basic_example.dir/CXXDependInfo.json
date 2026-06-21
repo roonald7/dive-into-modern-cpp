@@ -1,0 +1,30 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "",
+	"cxx-modules" : 
+	{
+		"CMakeFiles/basic_example.dir/src/Math.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "src",
+			"source" : "/home/ronaldcpp/Studies/Cpp/cpp-studies/phase-1/modules/src/Math.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		}
+	},
+	"dir-cur-bld" : "/home/ronaldcpp/Studies/Cpp/cpp-studies/phase-1/modules/build_ninja",
+	"dir-cur-src" : "/home/ronaldcpp/Studies/Cpp/cpp-studies/phase-1/modules",
+	"dir-top-bld" : "/home/ronaldcpp/Studies/Cpp/cpp-studies/phase-1/modules/build_ninja",
+	"dir-top-src" : "/home/ronaldcpp/Studies/Cpp/cpp-studies/phase-1/modules",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/home/ronaldcpp/Studies/Cpp/cpp-studies/phase-1/modules/build_ninja/CMakeFiles/basic_example.dir"
+}

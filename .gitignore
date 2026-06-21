@@ -1,1 +1,17 @@
+# Build systems
 build/
+build_ninja/
+.cache/
+bin/
+obj/
+
+# CMake artifacts
+CMakeCache.txt
+CMakeFiles/
+CMakeSettings.json
+cmake_install.cmake
+Makefile
+
+# OS files
+.DS_Store
+Thumbs.db
