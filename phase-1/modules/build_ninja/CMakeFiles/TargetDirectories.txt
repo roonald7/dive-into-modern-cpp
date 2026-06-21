@@ -1,3 +1,0 @@
-/home/ronaldcpp/Studies/Cpp/cpp-studies/phase-1/modules/build_ninja/CMakeFiles/basic_example.dir
-/home/ronaldcpp/Studies/Cpp/cpp-studies/phase-1/modules/build_ninja/CMakeFiles/edit_cache.dir
-/home/ronaldcpp/Studies/Cpp/cpp-studies/phase-1/modules/build_ninja/CMakeFiles/rebuild_cache.dir
