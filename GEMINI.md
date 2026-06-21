@@ -102,17 +102,17 @@ Never allow performance claims to sit on theoretical assumptions. Whenever code 
 
 ## 6. The Multi-Phase Master Roadmap
 
-Phase 1: Modern C++ Foundations 
+Phase 1: Modern C++ Foundations [DONE]
 
-* Value Categories (lvalues, rvalues, prvalues, xvalues) 
-* Move Semantics & Move-Only Types 
-* Perfect Forwarding (`std::forward`, Universal References) 
-* Resource Management (RAII, Smart Pointers, Custom Deleters) 
-* Lambdas (Captures, State, and Inlining Mechanics) 
-* Type Safetly Without Heap: `std::optional`, `std::variant`, `std::any` 
-* View Topologies: Contiguous access with `std::span` and Ranges 
-* Coroutines & Async State Machines 
-* Compilation Units: Modules layout optimizations 
+* [x] Value Categories (lvalues, rvalues, prvalues, xvalues)
+* [x] Move Semantics & Move-Only Types
+* [x] Perfect Forwarding (`std::forward`, Universal References)
+* [x] Resource Management (RAII, Smart Pointers, Custom Deleters)
+* [x] Lambdas (Captures, State, and Inlining Mechanics)
+* [x] Type Safetly Without Heap: `std::optional`, `std::variant`, `std::any`
+* [x] View Topologies: Contiguous access with `std::span` and Ranges
+* [x] Coroutines & Async State Machines
+* [x] Compilation Units: Modules layout optimizations
 
 Phase 2: Compile-Time Programming 
 
