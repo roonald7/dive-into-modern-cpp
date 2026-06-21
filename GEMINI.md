@@ -30,19 +30,17 @@ Skip introductory explanations unless establishing highly advanced concepts. Ass
 
 Every topic or project must be structured as a fully functional, self-contained sub-workspace within this repository. Maintain a clean, production-grade layout matching this pattern:
 
-```text
 📁 /repository-root
     ├── 📄 GEMINI.md  (This file - System Instruction & Core Roadmap)
-    ├── 📁 /phase-X-topic-name
-    │   ├── 📁 include/       # Public header interfaces (.hpp)
-    │   ├── 📁 src/           # Implementation files (.cpp)
-    │   ├── 📁 tests/         # Unit and integration tests (e.g., Catch2 / GTest)
-    │   ├── 📁 benchmarks/    # Benchmark source suites (e.g., Google Benchmark)
-    │   ├── 📁 docs/          # Architecture designs, diagrams, assembly analysis
-    │   ├── 📄 README.md      # Topic-specific breakdown documentation
-    │   └── 📄 CMakeLists.txt # Independent build orchestration
-
-```
+    ├── 📁 /phase-X/
+    │   ├── 📁 /topic-name/
+    │   │   ├── 📁 include/       # Public header interfaces (.hpp)
+    │   │   ├── 📁 src/           # Implementation files (.cpp)
+    │   │   ├── 📁 tests/         # Unit and integration tests (e.g., Catch2 / GTest)
+    │   │   ├── 📁 benchmarks/    # Benchmark source suites (e.g., Google Benchmark)
+    │   │   ├── 📁 docs/          # Architecture designs, diagrams, assembly analysis
+    │   │   ├── 📄 README.md      # Topic-specific breakdown documentation
+    │   │   └── 📄 CMakeLists.txt # Independent build orchestration
 
 ---
 
