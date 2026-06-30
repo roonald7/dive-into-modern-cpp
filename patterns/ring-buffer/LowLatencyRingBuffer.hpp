@@ -42,11 +42,55 @@ public:
     ~LowLatencyRingBuffer() = default;
 
     // Non-blocking emplace write operation (Zero-Copy Producer side)
-    template<typename... Args>
-    bool emplace(Args&&... args) {
-        
+    template <typename... Args>
+    bool emplace(Args &&...args) noexcept
+    {
+        const std::size_t current_tail = tail_.load(std::memory_order_relaxed);
+
+        if ((current_tail - cached_head_) == Capacity)
+        {
+            cached_head_ = head_.load(std::memory_order_acquire);
+
+            if ((current_tail - cached_head_) == Capacity)
+            {
+                return false; // Structurally full, apply backpressure up-stream
+            }
+        }
+
+        // Write directly into the contiguous slot using bitwise masking instead of modulo (%)
+        storage_[current_tail & Mask] = T{std::forward<Args>(args)...};
+
+        // Publish the item to the consumer.
+        // memory_order_release guarantees the data writes are visible BEFORE the tail increments.
+        tail_.store(current_tail + 1, std::memory_order_release);
+        return true;
     }
 
+    // Non-blocking pop read operation (Consumer side)
+    bool pop(T &value) noexcept
+    {
+        const std::size_t current_head = head_.load(std::memory_order_relaxed);
+
+        // Check if queue is empty using our local cached tail value first
+        if (current_head == cached_tail_)
+        {
+            // Only read the true atomic tail_ across the cache bus if the local cache says we are empty
+            cached_tail_ = tail_.load(std::memory_order_acquire);
+            if (current_head == cached_tail_)
+            {
+                return false;
+            }
+        }
+
+        // Retrieve data slot
+        value = std::move(storage_[current_head & Mask]);
+        // Signal to producer that the slot is now free.
+        head_.store(current_head + 1, std::memory_order_relaxed);
+        return true;
+    }
+
+    LowLatencyRingBuffer(const LowLatencyRingBuffer &) = delete;
+    LowLatencyRingBuffer(LowLatencyRingBuffer &&) = delete;
 };
 
 } // namespace ragc
